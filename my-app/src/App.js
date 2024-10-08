@@ -1,8 +1,13 @@
+import Chai from './Chai'
 
 function App() {
+  
   return (
-    <h1>Chai aur React | HC</h1>
+  <>
+    <h1>Chai aur React</h1>
+    <Chai />
+  </>
   );
-}
+} 
 
 export default App;
