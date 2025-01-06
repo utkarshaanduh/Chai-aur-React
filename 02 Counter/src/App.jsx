@@ -1,14 +1,25 @@
+// Hooks in react
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
 function App() {
   
-  let counter = 0
+  let [counter, setCounter] = useState(0)
+
+  // let counter = 0
 
   const addValue = () => {
-    console.log("value added", Math.random())
+    setCounter(counter+1)
+    console.log("value added", counter)
+  }
+
+  const subtractValue = () => {
+    counter = counter - 1
+    console.log("value subtracted", counter)
+    setCounter(counter)
   }
 
   return (
@@ -19,8 +30,8 @@ function App() {
       <h2>
         counter value: {counter}
       </h2>
-      <button onClick={addValue}> Add value</button><br/><br></br>
-      <button> Subtract value</button>
+      <button onClick={addValue}> Add value_{counter}</button><br/><br></br>
+      <button onClick={subtractValue}> Subtract value_{counter}</button><br/><br></br>
     </>
   )
 }
